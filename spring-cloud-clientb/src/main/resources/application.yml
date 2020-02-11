@@ -1,0 +1,15 @@
+server:
+  port: 8103
+
+spring:
+  application:
+    name: app2
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+    should-unregister-on-shutdown: true
+

@@ -1,0 +1,23 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: Zuul-server
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 30
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/
+    should-unregister-on-shutdown: true
+
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: app1
+    api-b:
+      path: /api-b/**
+      serviceId: app2
